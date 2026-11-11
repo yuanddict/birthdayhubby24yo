@@ -906,3 +906,26 @@ $('#skip').addEventListener('click',()=>{if(skipTyping&&!typingDone)skipTyping()
 </script>
 
 </body></html>
+<audio id="musik" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusik()" style="position:fixed; bottom:20px; right:20px; z-index:999; padding:10px 15px; border-radius:50px; border:none; background:#ff4d6d; color:white; font-weight:bold; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+  🎵 Play / Pause
+</button>
+
+<script>
+  const musik = document.getElementById("musik");
+  function toggleMusik() {
+    if (musik.paused) {
+      musik.play();
+    } else {
+      musik.pause();
+    }
+  }
+  document.addEventListener("click", function() {
+    if (musik.paused) {
+      musik.play();
+    }
+  }, { once: true });
+</script>
